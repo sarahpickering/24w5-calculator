@@ -7,24 +7,35 @@ const buttons = document.querySelectorAll('.buttons button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         if (button.textContent === '=') {
-            //which function goes here?
+            calculate()
         } else if (button.textContent === 'C') {
-            //which function goes here?
+            clearDisplay()
+        } else  if (button.textContent === '⌫'){
+            back()
         } else {
-            //which function goes here?
+            appendToDisplay(button.textContent)
         }
     });
 });
 
 // Functions
 function appendToDisplay(value) {
-    //write your code here
+    display.value += value
 }
 
 function clearDisplay() {
-    //write your code here
+    display.value = ''
+}
+
+function back() {
+    display.value = display.value.slice(0, -1);
 }
 
 function calculate() {
-    //write your code here
+    try {
+        const result = eval(display.value)
+        display.value = result
+    } catch (error) {
+        display.value = 'Error'
+    }
 }
