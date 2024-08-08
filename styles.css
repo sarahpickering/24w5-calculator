@@ -16,10 +16,10 @@
     padding: 10px;
     margin: 10px auto;
     border-radius: 5px;
-    color: #f6d365;
+    color: black;
     font-weight: bold;
     font-size: 16px;
-    background: #142f44;
+    background: antiquewhite;
 }
 
 .buttons button {
@@ -45,12 +45,12 @@
 }
 
 #backspace {
-    background: #a2bbcf;
+    background: #1d3849;
     border-radius: 5px;
 }
 
 .operator {
-    background: #a2bbcf;
+    background: #1d3849;
 } 
 
 .number{
@@ -58,7 +58,7 @@
 }
 
 .equals {
-    background: #a2bbcf;
+    background: #1d3849;
 }
 
 .buttons button:hover {

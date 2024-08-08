@@ -14,6 +14,12 @@ buttons.forEach(button => {
             back();
         } else if (['+', '-', '*', '/'].includes(button.textContent)) {
             handleOperatorClick(button.textContent);
+        } else if (button.textContent === 'M+') {
+            storeToMemory();
+        } else if (button.textContent === 'RM') {
+            recallMemory();
+        } else if (button.textContent === 'CM') {
+            clearMemory();
         } else {
             appendToDisplay(button.textContent);
         }
@@ -30,6 +36,7 @@ function appendToDisplay(value) {
         display.value += value;
     }
 }
+
 
 function clearDisplay() {
     display.value = '';
@@ -71,6 +78,19 @@ function handleOperatorClick(operator) {
 
     // Update the current operator
     currentOperator = operator;
+}
+
+function storeToMemory() {
+    memory = eval(document.getElementById("display")).value || 0;
+    clearDisplay();
+}
+
+function recallMemory() {
+    document.getElementById("display").value = memory;
+}
+
+function clearMemory() {
+    memory = 0;
 }
 
 // Example usage with buttons (assuming IDs are correctly set on your HTML elements)
